@@ -1,33 +1,30 @@
 
 import './App.css';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import {Form, Container, Button} from 'react-bootstrap';
 
-function FormDisabledExample() {
+function App() {
   return (
-    <Form>
-      <fieldset disabled>
-        <Form.Group className="mb-3">
-          <Form.Label htmlFor="disabledTextInput">Disabled input</Form.Label>
-          <Form.Control id="disabledTextInput" placeholder="Disabled input" />
+    <Container fluid="md">
+      <Form>
+        <Form.Group>
+          <Form.Label>Adresse email</Form.Label>
+          <Form.Control type="email" placeholder="Entrez votre adresse email"></Form.Control>
         </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label htmlFor="disabledSelect">Disabled select menu</Form.Label>
-          <Form.Select id="disabledSelect">
-            <option>Disabled select</option>
-          </Form.Select>
+
+        <Form.Group>
+          <Form.Label>Objet du mail</Form.Label>
+          <Form.Control type="email" placeholder="Entrez votre adresse email"></Form.Control>
         </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Check
-            type="checkbox"
-            id="disabledFieldsetCheck"
-            label="Can't check this"
-          />
+
+        <Form.Group>
+          <Form.Label>Message à envoyer</Form.Label>
+          <Form.Control as="textarea" row={20} placeholder="Youpi ton premier message..."></Form.Control>
         </Form.Group>
-        <Button type="submit">Submit</Button>
-      </fieldset>
-    </Form>
+
+        <Button variant="primary" size="lg" block >Envoyer le message</Button>
+      </Form>
+    </Container>
   );
 }
 
-export default FormDisabledExample;
+export default App;
